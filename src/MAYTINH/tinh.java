@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JCheckBoxMenuItem;
@@ -213,6 +214,20 @@ public class tinh extends JFrame{
 		button_18.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText(textField.getText()+".");
+				String chuoi =textField.getText();
+				String[] str =chuoi.split("");
+				int dem=0;
+				for(int i=0;i<str.length;i++){
+					if(str[i].equals(".")){
+						dem++;
+					}
+				}
+				if(dem>1){
+					JOptionPane.showMessageDialog(button_12, "chi duoc nhap 1 lan");
+					String l=textField.getText();
+					l=l.substring(0, l.length()-1);
+					textField.setText(l);
+				}
 			}
 		});
 		button_18.setBounds(133, 289, 62, 34);
