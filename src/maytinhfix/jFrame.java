@@ -21,32 +21,15 @@ public class jFrame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private double ketqua;
+	private static double ketqua;
 	private JPanel contentPane;
-	private String pheptoan;
+	private static String pheptoan;
 	
-	JButton[] buttons = new JButton[30];
-	JTextField textField = new JTextField();
-	///ham tạo jframe
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					
-					jFrame frame = new jFrame();
-					frame.setSize(355, 421);
-					frame.setVisible(true);
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		add
-       
-	}
-	///hàm khoi tạo jframe
-	public jFrame() {
+	static JButton[] buttons = new JButton[30];
+	static JTextField textField = new JTextField();
+	
+	
+public  jFrame() {
 		
         getContentPane().setLayout(null);
 		textField.setBounds(5, 0, 326, 63);
@@ -112,7 +95,30 @@ public class jFrame extends JFrame {
 	    buttons[28].setText("+");
 	
 	}
-	public jFrame () {
+	
+	
+	
+	///ham tạo jframe
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					
+					jFrame frame = new jFrame();
+					frame.setSize(355, 421);
+					frame.setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		jFrame.addAction();	
+	}
+	///hàm khoi tạo jframe
+	
+	public static void  addAction () {
 		
 		buttons[1].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
