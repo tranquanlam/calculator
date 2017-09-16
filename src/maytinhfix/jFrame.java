@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class jFrame extends JFrame {
+public class jFrame extends JFrame implements ActionListener{
 	/**
 	 * 
 	 */
@@ -93,7 +93,7 @@ public  jFrame() {
 	    buttons[26].setText("0");
 	    buttons[27].setText(".");
 	    buttons[28].setText("+");
-	
+	new jFrame();
 	}
 	
 	
@@ -114,11 +114,11 @@ public  jFrame() {
 			}
 		});
 		
-		jFrame.addAction();	
+	   	
 	}
 	///hàm khoi tạo jframe
 	
-	public static void  addAction () {
+	public void addAction (ActionListener event) {
 		
 		buttons[1].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -284,7 +284,13 @@ public  jFrame() {
 				pheptoan="+";
 			}
 		});
-		
+	}
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	}
