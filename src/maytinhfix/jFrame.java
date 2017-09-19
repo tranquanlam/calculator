@@ -27,8 +27,8 @@ public class jFrame extends JFrame implements ActionListener{
 	private static String pheptoan;
 	
 	
-	static JButton[] buttons = new JButton[30];
-	static JTextField textField = new JTextField();
+	private JButton[] buttons = new JButton[30];
+	private JTextField textField = new JTextField();
 	
 	
 public  jFrame() {
@@ -43,6 +43,7 @@ public  jFrame() {
 		int kichcongang=0;
 		int chieudai=62;
 		int chieurong=34;
+		
 //		try{
 //		buttons[0] =new JButton("MC");
 //		buttons[0].setBounds(0, 69, 62, 34);
@@ -97,70 +98,21 @@ public  jFrame() {
 	    buttons[29].setText("+");
 	    buttons[28].setText(".");
 	    
-	    getContentPane().add(buttons[1]);			
-	    getContentPane().add(buttons[2]);			
-	    getContentPane().add(buttons[3]);			
-	    getContentPane().add(buttons[4]);			
-	    getContentPane().add(buttons[5]);			
-	    getContentPane().add(buttons[6]);			
-	    getContentPane().add(buttons[7]);			
-	    getContentPane().add(buttons[8]);			
-	    getContentPane().add(buttons[9]);			
-	    getContentPane().add(buttons[10]);			
-	    getContentPane().add(buttons[11]);			
-	    getContentPane().add(buttons[12]);			
-	    getContentPane().add(buttons[13]);			
-	    getContentPane().add(buttons[14]);			
-	    getContentPane().add(buttons[15]);			
-	    getContentPane().add(buttons[16]);			
-	    getContentPane().add(buttons[17]);			
-	    getContentPane().add(buttons[18]);			
-	    getContentPane().add(buttons[19]);			
-	    getContentPane().add(buttons[20]);			
-	    getContentPane().add(buttons[21]);			
-	    getContentPane().add(buttons[22]);			
-	    getContentPane().add(buttons[23]);			
-	    getContentPane().add(buttons[24]);			
-	    getContentPane().add(buttons[25]);			
-	    getContentPane().add(buttons[26]);			
-	    getContentPane().add(buttons[28]);			
-	    getContentPane().add(buttons[29]);
+	    for(int i=1;i<buttons.length;i++){
+	    	getContentPane().add(buttons[i]);			
+	
+	    } 
 	    
-	    buttons[1].addActionListener(this);			
-	    buttons[2].addActionListener(this);			
-	    buttons[3].addActionListener(this);			
-	    buttons[4].addActionListener(this);			
-	    buttons[5].addActionListener(this);			
-	    buttons[6].addActionListener(this);			
-	    buttons[7].addActionListener(this);			
-	    buttons[8].addActionListener(this);			
-	    buttons[9].addActionListener(this);			
-	    buttons[10].addActionListener(this);			
-	    buttons[11].addActionListener(this);			
-	    buttons[12].addActionListener(this);			
-	    buttons[13].addActionListener(this);			
-	    buttons[14].addActionListener(this);			
-	    buttons[15].addActionListener(this);			
-	    buttons[16].addActionListener(this);			
-	    buttons[17].addActionListener(this);			
-	    buttons[18].addActionListener(this);			
-	    buttons[19].addActionListener(this);			
-	    buttons[20].addActionListener(this);			
-	    buttons[21].addActionListener(this);			
-	    buttons[22].addActionListener(this);			
-	    buttons[23].addActionListener(this);			
-	    buttons[24].addActionListener(this);			
-	    buttons[25].addActionListener(this);			
-	    buttons[26].addActionListener(this);			
-	    buttons[29].addActionListener(this);			
-	    buttons[28].addActionListener(this);
+
+	    for(int i=1;i<buttons.length;i++){
+	    	buttons[i].addActionListener(this);
+	    	}	
 	    
-	     
-	}
-	
-	
-	
-	///ham tạo jframe
+	    
+	    }
+	    
+
+	///ham tạo JFRAME
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -178,7 +130,7 @@ public  jFrame() {
 		
 	
 	}
-	///hàm khoi tạo jframe
+	///hàm khoi tạo JFRAME
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -232,7 +184,7 @@ public  jFrame() {
 				textField.setText(String.valueOf(ketqua));
 				break;
 			case "%":
-				textField.setText(String.valueOf((ketqua / Double.parseDouble(textField.getText())) * 100) + "%");
+				textField.setText(String.valueOf(ketqua ));
 				break;
 			case "can":
 				textField.setText(String.valueOf(ketqua));
@@ -290,8 +242,8 @@ public  jFrame() {
 			}
 		if(b==buttons[15]){
 			double so1 = Double.valueOf(textField.getText());
-			ketqua = so1;
-			textField.setText(null);
+			ketqua = 1/so1;
+			textField.setText(String.valueOf(1/so1));
 			pheptoan = "%";}
 		
 		
